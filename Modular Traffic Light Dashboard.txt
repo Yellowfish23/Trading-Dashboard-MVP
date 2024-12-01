@@ -1,0 +1,108 @@
+### Statement of Work (SOW) for Modular Traffic Light Dashboard
+
+#### A. Objective
+
+The purpose of this project is to build a modular, interactive dashboard to visualise key elements of the Multiplier Strategy for advanced trading analysis. This includes utilising TradingView data feeds and presenting insights in a traffic light format for easy decision-making.
+
+#### B. Architecture Overview
+
+##### B.1 Architectural Approach
+
+The dashboard will be developed as a scalable, web-based application with modular components to support a high level of configurability and future expansion. The system will employ a microservices architecture, consisting of three primary layers
+
+   Frontend (Presentation Layer) A modern JavaScript framework (React.js or Angular) will be used to build dynamic user interfaces.
+   Backend (Application Logic Layer) The backend, built in Python (using frameworks like Flask or FastAPI), will be responsible for data processing, including interacting with the TradingView API.
+   Data Processing and Analytics Handles incoming market data from TradingView and provides analytics needed for A+ setups, including handling of R-multiple calculations.
+
+##### B.2 Key Technologies
+
+   Frontend React.js or Angular for responsive UI.
+   Backend Python with Flask or FastAPI to process and respond to data requests.
+   Database PostgreSQL or SQLite to store historical trade data for further analysis.
+   API Integration Use TradingView's API for real-time market data.
+   Testing Framework Test-Driven Development (TDD) will be employed using pytest for backend and Jest for frontend to ensure all components work correctly throughout the development cycle.
+
+### C. Functional Requirements
+
+##### C.1 Data Integration
+
+   C.1.1 Data Feed Integration Integrate TradingView data feed to receive real-time market data.
+   C.1.2 Data Processing Process data to calculate metrics relevant to A+ setups like momentum trades and mean reversion entries.
+
+##### C.2 Dashboard Features
+
+   C.2.1 Modular Components Design a dashboard with modular components
+       Market Analysis Module Displays real-time market trends, such as bullbear market status.
+       A+ Setup Alerts Traffic light indicators to represent optimal trade setups based on momentum, mean reversion, and data-driven criteria.
+       R-Multiple Visualisation Present R-multiple adjustments over time (e.g., from 11 to 11.1) with clear visual cues on riskreward changes.
+   C.2.2 User Interaction Allow the user to adjust inputs, such as tightening stop-losses, and immediately visualise changes in R-multiples.
+
+##### C.3 Trading Metrics & Historical Data
+
+   C.3.1 Trade History Module Visualise results for 30-100 trades as per the Multiplier Strategy, showing winninglosing trades, invalidation areas, and R-multiple development.
+   C.3.2 Invalidation Zones Include a graphical representation of average winning trades, highlighting explored vs. unexplored price action.
+
+##### C.4 Alerts & Notifications
+
+   C.4.1 Setup Alerts Customisable alerts that indicate when an A+ setup occurs.
+   C.4.2 Status Notifications Notify the user when changes in the R-multiple lead to profitable improvements.
+
+### D. Implementation Phases with TDD Approach
+
+#### D.1 Phase 1 Data Integration and Backend Development
+
+1.  TradingView API Integration
+    
+       Step 1 Write unit tests to verify connection to TradingView API using mocked API responses.
+       Step 2 Develop integration module to handle API data, process real-time market information, and store results in the database.
+2.  Backend Data Processing
+    
+       Step 1 Create unit tests for processing market data into A+ setups.
+       Step 2 Develop functionality to convert TradingView data into actionable metrics, such as identifying momentum and mean reversion trades.
+
+#### D.2 Phase 2 Frontend Dashboard Development
+
+1.  UIUX Prototyping and Initial Build
+    
+       Step 1 Prototype UI components for traffic lights and metrics display using wireframes.
+       Step 2 Write Jest tests for frontend components to validate data rendering, user interactions, and state updates.
+       Step 3 Develop the frontend, connecting it to the backend services to visualise A+ setups and R-multiples.
+2.  Traffic Light System Development
+    
+       Step 1 Create unit tests to validate the logic behind different traffic light statuses for momentum and mean reversion.
+       Step 2 Develop a visual indicator system based on A+ setups derived from backend metrics.
+
+#### D.3 Phase 3 User Interaction & Modular Enhancements
+
+1.  User Adjustments and Customisation
+    
+       Step 1 Write tests to ensure that adjustments (e.g., stop-loss changes) impact visualisation and backend data correctly.
+       Step 2 Develop the interaction module allowing users to tweak inputs and instantly reflect changes on visualisations.
+2.  Real-time Alerts and Notifications
+    
+       Step 1 Write unit tests to verify that alerts trigger correctly based on specific trading conditions.
+       Step 2 Implement alerting system to provide setup alerts and status notifications to the user.
+
+### E. Deliverables
+
+   Integrated Modular Dashboard with market analysis, A+ setups, and riskreward visualisation.
+   Testing Report Summary of tests conducted, including unit and integration tests under TDD.
+   User Guide detailing how to use and adjust dashboard settings.
+
+### Next Logical Steps
+
+A.1 UIUX Prototype Review Review initial mockups and finalise the dashboard's interface for usability. A.2 Backend Unit Testing Confirm all API interactions and calculations are functioning as required with rigorous unit testing. A.3 Frontend Integration Start connecting the backend to the front-end to develop a seamless data visualisation experience.
+
+Hotkey Shortcuts
+
+   A Finalise the proposed UIUX design.
+   B Initiate full backend testing before integration.
+   C Begin frontend-backend integration for a live data experience.
+
+#### FAQ
+
+Q1 How does TDD ensure quality in development By using Test-Driven Development (TDD), each feature is thoroughly tested before implementation, ensuring reliable, bug-free development and reducing issues in future phases.
+
+Q2 How is the trading data visualised on the dashboard The dashboard will use a traffic light system to present A+ setups and show visual cues for real-time adjustments, making complex data easy to interpret for trading decisions.
+
+Q3 How will user adjustments be implemented User adjustments such as modifying stop-loss settings are immediately processed by the backend, recalculated, and reflected in real-time visualisations, offering instant feedback to traders.
