@@ -1,0 +1,8 @@
+remote_theme: pages-themes/midnight@v0.2.0
+plugins:
+- jekyll-remote-theme
+title: Trading Dashboard MVP
+description: Real-time trading dashboard with technical indicators and signal visualization
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-midnight
